@@ -30,6 +30,7 @@ services:
   
   lotus:
     image: textile/lotus:${LOTUS_IMAGE_TAG}
+    command: ["lotus","daemon", "--import-snapshot", "https://fil-chain-snapshots-fallback.s3.amazonaws.com/mainnet/minimal_finality_stateroots_latest.car"]
     volumes:
       - powergate-lotus:/data
     environment:
